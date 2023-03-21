@@ -14,5 +14,13 @@ public class Tester {
 
        Person person = new Person("Homer", "Simpson", "742 Evergreen Terrace, Springfield, OH", LocalDate.of(1965,12,10));
        System.out.println(person);
+
+       Student student1 = new Student("Barney", "Duff", "Moe's Tavern",
+                                        LocalDate.of(1973,02,10),200041234);
+
+       ArrayList<Grade> grades2 = new ArrayList<>();
+       grades.add(new Grade(200041235, 20023,98));
+       Student student2 = new Student("Bart", "Simpson", "742 Evergreen Terrace, Springfield, OH",
+                                LocalDate.of(1982,03,19), 200041235, grades2);
     }
 }
