@@ -32,7 +32,7 @@ public class DBUtility {
                 ResultSet resultSet = statement.executeQuery("SELECT * FROM courses");
                 )
         {
-            //loop over the records returned an create Course objects
+            //loop over the records returned and create Course objects
             while (resultSet.next())
             {
                 int crn = resultSet.getInt("crn");
@@ -48,7 +48,7 @@ public class DBUtility {
         return courses;
     }
 
-    private static ArrayList<Grade> getCoursesFromDB(int studentNumber)
+    private static ArrayList<Grade> getGradesFromDB(int studentNumber)
     {
         ArrayList<Grade> grades = new ArrayList<>();
 
