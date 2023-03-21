@@ -22,5 +22,8 @@ public class Tester {
        grades.add(new Grade(200041235, 20023,98));
        Student student2 = new Student("Bart", "Simpson", "742 Evergreen Terrace, Springfield, OH",
                                 LocalDate.of(1982,03,19), 200041235, grades2);
+
+       System.out.println("Student 1: " + student1);
+       System.out.println("Student 2:" + student2);
     }
 }

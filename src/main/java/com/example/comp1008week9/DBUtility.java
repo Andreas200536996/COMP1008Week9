@@ -61,7 +61,7 @@ public class DBUtility {
                 ResultSet resultSet = statement.executeQuery("SELECT * FROM grades WHERE studentNum = "+studentNumber);
         )
         {
-            //loop over the records returned an create Course objects
+            //loop over the records returned and create Course objects
             while (resultSet.next())
             {
                 int crn = resultSet.getInt("crn");
@@ -74,6 +74,42 @@ public class DBUtility {
             e.printStackTrace();
         }
         return grades;
+    }
+
+
+
+
+    public static ArrayList<Student> getStudentsFromDB()
+    {
+        ArrayList<Student> students = new ArrayList<>();
+
+        //connect to the DB
+        //try with () indicates that it is a try with resources block. Resources will
+        //automatically be closed if they are opened inside the () block
+        try(
+                Connection conn = DriverManager.getConnection(connectUrl,user,password);
+                Statement statement = conn.createStatement();
+                ResultSet resultSet = statement.executeQuery("SELECT * FROM students");
+        )
+        {
+            //loop over the records returned and create Course objects
+            while (resultSet.next())
+            {
+                int studentNum = resultSet.getInt("studentNum");
+                ArrayList<Grade> grades = getGradesFromDB(studentNum);
+
+               students.add(new Student(studentNum,
+                                resultSet.getString("firstName"),
+                                resultSet.getString("lastName"),
+                                resultSet.getString("address"),
+                                resultSet.getDate("birthday").toLocalDate(),
+                                grades));
+            }
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return students;
     }
 
 }

@@ -7,7 +7,7 @@ public class Student extends Person{
     private int studentNumber;
     private ArrayList<Grade> grades;
 
-    public Student(String firstName, String lastName, String address, LocalDate birthday, int studentNumber, ArrayList<Grade> grades) {
+    public Student(int studentNumber, String firstName, String lastName, String address, LocalDate birthday,  ArrayList<Grade> grades) {
         super(firstName, lastName, address, birthday);
         setStudentNumber(studentNumber);
         this.grades = grades;
@@ -23,7 +23,7 @@ public class Student extends Person{
      * @param birthday
      * @param studentNumber
      */
-    public Student(String firstName, String lastName, String address, LocalDate birthday, int studentNumber) {
+    public Student(int studentNumber, String firstName, String lastName, String address, LocalDate birthday) {
         super(firstName, lastName, address, birthday);
         setStudentNumber(studentNumber);
         this.grades = new ArrayList<>();
