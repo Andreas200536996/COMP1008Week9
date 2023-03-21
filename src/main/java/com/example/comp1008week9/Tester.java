@@ -1,12 +1,10 @@
 package com.example.comp1008week9;
 
+import java.util.ArrayList;
+
 public class Tester {
     public static void main(String[] args) {
-        try {
-            Course course = new Course(20021, "COMP 1030", "Programming Fundamentals");
-            System.out.println(course);
-        } catch(Exception e) {
-            System.out.println(e.getMessage());
-        }
+        ArrayList<Course> courses = DBUtility.getCoursesFromDB();
+        System.out.println(courses);
     }
 }
