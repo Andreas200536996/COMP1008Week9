@@ -14,7 +14,7 @@ public class Tester {
 
        Person person = new Person("Homer", "Simpson", "742 Evergreen Terrace, Springfield, OH", LocalDate.of(1965,12,10));
        System.out.println(person);
-
+/**
        Student student1 = new Student("Barney", "Duff", "Moe's Tavern",
                                         LocalDate.of(1973,02,10),200041234);
 
@@ -25,5 +25,9 @@ public class Tester {
 
        System.out.println("Student 1: " + student1);
        System.out.println("Student 2:" + student2);
+ */
+
+        ArrayList<Student> students = DBUtility.getStudentsFromDB();
+        System.out.println(students);
     }
 }

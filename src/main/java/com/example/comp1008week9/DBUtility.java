@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class DBUtility {
     //the username and password should be what ever you use on YOUR mysql server
     private static String user = "root";
-    private static String password = "root";
+    private static String password = "Puppy357";
 
     //jdbc:mysql - this is telling the system which SQL driver to user
     //127.0.0.1:3306 - tells Java that mySQL server is at IP 127.0.0.1, port 3306
